@@ -1,0 +1,19 @@
+import pandas as pd
+
+# Load the dataset
+data = pd.read_csv('heart_disease_data.csv')
+
+# Display the first few rows of the dataset
+print(data.head())
+
+# Check for missing values
+print(data.isnull().sum())
+
+# Fill missing values (if any) with the median or appropriate method
+data.fillna(data.median(), inplace=True)
+
+# Drop duplicate rows
+data.drop_duplicates(inplace=True)
+
+# Display cleaned data info
+print(data.info())
