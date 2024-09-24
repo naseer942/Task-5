@@ -1,0 +1,14 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Correlation matrix
+correlation = data.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+
+# Distribution of the target variable
+sns.countplot(x='target', data=data)
+plt.title('Heart Disease Distribution')
+plt.show()
